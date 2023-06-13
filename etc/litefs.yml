@@ -1,0 +1,13 @@
+fuse:
+  dir: "/litefs"
+
+data:
+  dir: "/db"
+
+exec:
+  - cmd: "foo"
+
+lease:
+  type: "static"
+  advertise-url: "http://${PRIMARY_REGION}.${FLY_APP_NAME}.internal:20202"
+  candidate: ${FLY_REGION == PRIMARY_REGION}
